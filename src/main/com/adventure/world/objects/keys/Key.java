@@ -21,8 +21,14 @@ public class Key implements Tangible {
 
 
     //TODO Add default (i.e. no params) constructor here
+
     public Key() {
+        this.level= 1;
+        this.name = "key";
+
     }
+
+
 
     //TODO add constructor that takes a level and name, and saves it
 

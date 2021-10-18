@@ -23,6 +23,8 @@ public class Door implements Tangible {
     //TODO Add a default (i.e. no params) constructor here
 
     public Door() {
+        this.level =1;
+        this.isOpen= false;
     }
 
     //TODO Add a constructor that takes an isOpen and level and saves both
