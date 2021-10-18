@@ -8,33 +8,44 @@ import main.com.adventure.world.objects.keys.Key;
 
 public class Player {
 
+    //Added name variable below
+    private String name= "";
     public int level = 5;
-    //TODO Add name variable here
     private int currentLocationIndex = AppSettings.getStartingLocation();
     private Key key;
     private Shovel shovel;
     private int power = 1;
     private int health = 10;
 
+
+
+
     /**
      * Sprint 2 Module 1
      * Saves the player's name. This file should store the name so it can be referenced later. After setting the name,
      * inform the user that the name has been changed by saying "Your name is now {name}".
      * @param newName - the player's name that will be saved
+     *                DONE BELOW
      */
-    public void setName(String newName) {
 
+    public void setName(String newName) {
+        this.name = newName;
+        System.out.println("Your name is now " + name);
     }
+
 
     /**
      * Sprint 2 Module 1
      * Retrieves the name of this player. The name of the player should be stored in this file, so we should reference
      * that value here.
      * @return The name of the player
+     * NULL OR NAME???
      */
+
     public String getName() {
-        return null;
+        return name;
     }
+
 
     /**
      * Sprint 2 Module 1
@@ -42,9 +53,12 @@ public class Player {
      * player can open doors.
      * @return true if the player's level is enough to open the door.
      */
-    public boolean canOpenDoor() {
-        return false;
+
+
+    public boolean canOpenDoor(){
+        return 2 < (float) level/2;
     }
+
 
 
 
@@ -63,8 +77,20 @@ public class Player {
      * @param isValid - the possible directions
      * @return true if the move is executed. Otherwise, false.
      */
+
+
+
     public boolean move(String direction, boolean isValid) {
+        StringBuilder builder = new StringBuilder();
+        boolean indexToChangeToWest = canOpenDoor();
+        boolean indexToChangeToEast = (isValid);
+        direction = builder.toString();
+
+
+
+        //east west
         return true;
+
     }
 
     /**
@@ -74,6 +100,8 @@ public class Player {
      */
     public void setWeapon(Weapon item) {
         //TODO Complete this function in Sprint 3 Module 2
+        
+
     }
 
     /**

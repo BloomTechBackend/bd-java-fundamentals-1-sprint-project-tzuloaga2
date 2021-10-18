@@ -1,17 +1,56 @@
 package main.com.adventure;
 
 import main.com.adventure.settings.Command;
+import java.util.Scanner;
+
+
 
 public class GameInputProcessor {
 
+
     /**
      * Starts the prompt process to the user.
+     *
      * @return the response from the user.
      */
+
     public String prompt() {
-        System.out.println("Enter your next command:");
-        return "";
+
+
+        Scanner scanner = new Scanner(System.in);
+
+        //added the lines below missing java scanner
+        System.out.println("Enter your name: ");
+        String name = scanner.nextLine();
+
+        System.out.println("Enter your level: ");
+        String level = scanner.nextLine();
+
+        System.out.println("Enter your current location: ");
+        String currentLocationIndex = scanner.nextLine();
+
+        System.out.println("Enter key: ");
+        String key = scanner.nextLine();
+
+        System.out.println("Enter shovel: ");
+        String shovel = scanner.nextLine();
+
+        System.out.println("Enter your power: ");
+        String power = scanner.nextLine();
+
+        System.out.println("Enter your health: ");
+        String health = scanner.nextLine();
+
+        return name + level +currentLocationIndex + key + shovel + power + health ;
+
+
+
     }
+
+
+
+
+
 
     /**
      * Inputs that come into this method represent single action with no object. When building the command, you'll want
