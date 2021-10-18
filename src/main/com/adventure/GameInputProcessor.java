@@ -16,34 +16,11 @@ public class GameInputProcessor {
 
     public String prompt() {
 
-
         Scanner scanner = new Scanner(System.in);
 
-        //added the lines below missing java scanner
-        System.out.println("Enter your name: ");
-        String name = scanner.nextLine();
 
-        System.out.println("Enter your level: ");
-        String level = scanner.nextLine();
-
-        System.out.println("Enter your current location: ");
-        String currentLocationIndex = scanner.nextLine();
-
-        System.out.println("Enter key: ");
-        String key = scanner.nextLine();
-
-        System.out.println("Enter shovel: ");
-        String shovel = scanner.nextLine();
-
-        System.out.println("Enter your power: ");
-        String power = scanner.nextLine();
-
-        System.out.println("Enter your health: ");
-        String health = scanner.nextLine();
-
-        return name + level +currentLocationIndex + key + shovel + power + health ;
-
-
+        System.out.println("Enter your next command: ");
+        return scanner.nextLine();
 
     }
 
@@ -59,7 +36,9 @@ public class GameInputProcessor {
      * @return - the Command object with the proper verb and blank object
      */
     private Command buildSimpleCommand(String input) {
-        return new Command("", "");
+        String[] separate = input.split(" ");
+
+        return new Command(separate[0], "");
     }
 
     /**
@@ -69,7 +48,8 @@ public class GameInputProcessor {
      * @return - the Command object with the proper verb and object
      */
     private Command buildCommandWithObject(String input) {
-        return new Command("", "");
+        String[] separate = input.split(" ");
+        return new Command(separate[0],separate[1] );
     }
 
 

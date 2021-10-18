@@ -79,18 +79,18 @@ public class Player {
      */
 
 
-
     public boolean move(String direction, boolean isValid) {
-        StringBuilder builder = new StringBuilder();
-        boolean indexToChangeToWest = canOpenDoor();
-        boolean indexToChangeToEast = (isValid);
-        direction = builder.toString();
-
-
-
-        //east west
+        if (isValid) {
+            if (direction.equals("EAST")) {
+                this.currentLocationIndex += 1;
+            } else if (direction.equals("WEST")) {
+                this.currentLocationIndex -= 1;
+            }
+        } else {
+            System.out.println(direction + " is not a valid direction");
+            return false;
+        }
         return true;
-
     }
 
     /**
@@ -100,7 +100,7 @@ public class Player {
      */
     public void setWeapon(Weapon item) {
         //TODO Complete this function in Sprint 3 Module 2
-        
+
 
     }
 

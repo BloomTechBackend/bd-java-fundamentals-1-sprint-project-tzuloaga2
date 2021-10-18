@@ -34,8 +34,8 @@ main/com/adventure/world/objects/TangibleListener.java
  main.com.adventure.world.objects.TangibleListener
 main/com/adventure/world/scenes/SceneFactory.java
  main.com.adventure.world.scenes.SceneFactory
-main/com/adventure/GameInputProcessor.java
- main.com.adventure.GameInputProcessor
+main/com/adventure/CombatController.java
+ main.com.adventure.CombatController
 main/com/adventure/world/scenes/s3_m2/MonsterSwordScene.java
  main.com.adventure.world.scenes.s3_m2.MonsterSwordScene
 main/com/adventure/world/objects/keys/KeyFactory.java
@@ -52,8 +52,8 @@ main/com/adventure/world/scenes/s2_m1/CaveEscapeScene.java
  main.com.adventure.world.scenes.s2_m1.CaveEscapeScene
 main/com/adventure/world/scenes/s2_m2/HallwayDoorScene.java
  main.com.adventure.world.scenes.s2_m2.HallwayDoorScene
-main/com/adventure/CombatController.java
- main.com.adventure.CombatController
+main/com/adventure/GameInputProcessor.java
+ main.com.adventure.GameInputProcessor
 main/com/adventure/world/scenes/s2_m3/HouseOutsideScene.java
  main.com.adventure.world.scenes.s2_m3.HouseOutsideScene
 main/com/adventure/world/objects/Hole.java

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.adventure.sprint2.S2M3Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-18T18:55:15" hostname="Lelles-MacBook-Pro.local" time="0.057">
+<testsuite name="com.adventure.sprint2.S2M3Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-18T22:02:08" hostname="68.0.16.172.net-uno.net" time="0.128">
   <properties/>
-  <testcase name="testDoorConstructors()" classname="com.adventure.sprint2.S2M3Test" time="0.03"/>
-  <testcase name="testKeyAndDoor()" classname="com.adventure.sprint2.S2M3Test" time="0.022"/>
-  <testcase name="testKeyConstructors()" classname="com.adventure.sprint2.S2M3Test" time="0.002"/>
+  <testcase name="testDoorConstructors()" classname="com.adventure.sprint2.S2M3Test" time="0.045"/>
+  <testcase name="testKeyAndDoor()" classname="com.adventure.sprint2.S2M3Test" time="0.065"/>
+  <testcase name="testKeyConstructors()" classname="com.adventure.sprint2.S2M3Test" time="0.007"/>
   <system-out><![CDATA[Door is now open
 That didn't work on the door
 Door is now open
