@@ -18,8 +18,8 @@ public class S3M1Test {
     @BeforeEach
     public void setup() {
         processor = mock(GameInputProcessor.class);
+        when(processor.getNextCommand()).thenCallRealMethod();
     }
-
     @Test
     public void testCommandMove() {
         if (AppSettings.story.ordinal() < AppSettings.Story.S3M1_TestDirections.ordinal()) {
@@ -27,7 +27,6 @@ public class S3M1Test {
         }
 
         when(processor.prompt()).thenReturn("move west");
-        when(processor.getNextCommand()).thenCallRealMethod();
 
         Command command = processor.getNextCommand();
         assertEquals(CommandVerb.MOVE, command.getVerb());

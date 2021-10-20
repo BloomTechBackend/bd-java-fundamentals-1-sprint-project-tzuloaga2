@@ -1,6 +1,8 @@
 package main.com.adventure;
 
 import main.com.adventure.settings.Command;
+import main.com.adventure.settings.CommandVerb;
+
 import java.util.Scanner;
 
 
@@ -24,11 +26,6 @@ public class GameInputProcessor {
 
     }
 
-
-
-
-
-
     /**
      * Inputs that come into this method represent single action with no object. When building the command, you'll want
      * to supply the first word as the verb and leave the objectName blank
@@ -37,8 +34,9 @@ public class GameInputProcessor {
      */
     private Command buildSimpleCommand(String input) {
         String[] separate = input.split(" ");
+        CommandVerb sept = CommandVerb.getVerb(separate[0]);
+        return new Command(sept, "");
 
-        return new Command(separate[0], "");
     }
 
     /**
@@ -49,7 +47,7 @@ public class GameInputProcessor {
      */
     private Command buildCommandWithObject(String input) {
         String[] separate = input.split(" ");
-        return new Command(separate[0],separate[1] );
+        return new Command(CommandVerb.getVerb(separate[0]),separate[1] );
     }
 
 

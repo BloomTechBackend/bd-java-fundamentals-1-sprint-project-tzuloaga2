@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.adventure.sprint2.S2M4Test" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-10-19T14:48:18" hostname="68.0.16.172.net-uno.net" time="0.275">
-  <properties/>
-  <testcase name="testScene()" classname="com.adventure.sprint2.S2M4Test" time="0.271"/>
-  <testcase name="testHole()" classname="com.adventure.sprint2.S2M4Test" time="0.002"/>
-  <system-out><![CDATA[Door is now open
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

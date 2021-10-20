@@ -3,6 +3,7 @@ package main.com.adventure.world.objects.doors;
 import main.com.adventure.world.objects.Tangible;
 import main.com.adventure.world.objects.keys.Key;
 import main.com.adventure.world.objects.keys.OmniKey;
+import java.util.Random;
 
 import java.util.Arrays;
 
@@ -19,6 +20,10 @@ import java.util.Arrays;
  */
 
 public class OmniDoor implements Tangible {
+    public boolean bound;
+    //added line above and below
+
+
 
     /**
      * The number of pins this door has.
@@ -40,7 +45,8 @@ public class OmniDoor implements Tangible {
      * Creates an OmniDoor with the default lock (all true).
      */
     public OmniDoor() {
-        Arrays.fill(pins, true);
+        randomizePins();
+        //Arrays.fill(pins, true);
     }
 
     /**
@@ -56,8 +62,24 @@ public class OmniDoor implements Tangible {
      * @param key - the key that will be used to attempt to unlock the door
      */
     public void unlock(OmniKey key) {
-        //TODO Complete the function
-    }
+        if (getFirstWrongPin(key)== -1){
+            isOpen=true;
+            //done???
+        } else {
+            key.pins = this.pins;
+        }
+
+        }
+        public void bindKey (OmniKey omnikey){
+        if (bound){
+            return;
+        }
+        randomizePins();
+        omnikey.pins = pins;
+        omnikey.bound = true;
+        bound = true;
+        }
+
 
     /**
      * The method will check each pin from the key with the pin
@@ -74,8 +96,12 @@ public class OmniDoor implements Tangible {
      * all are correct.
      */
     public int getFirstWrongPin(OmniKey key) {
-        //TODO Complete the function
-        return 0;
+        for (int i = 0; i < pins.length; i++){
+            if (key.pins[i] != pins [i]){
+                return i;
+            }
+        }
+        return -1;
     }
 
     //Tangible implementation//
@@ -104,7 +130,7 @@ public class OmniDoor implements Tangible {
     public void useItem(Tangible initiator) {
         if (!(initiator instanceof OmniKey)) {
             if (initiator instanceof Key) {
-                System.out.println("Try using and OmniKey instead.");
+                System.out.println("Try using an OmniKey instead.");
             }
             return;
         }
@@ -114,6 +140,14 @@ public class OmniDoor implements Tangible {
 
     @Override
     public void use() {
+
+    }
+    private void randomizePins(){
+        Random random = new Random();
+        for (int i = 0; i < pinCount; i++) {
+            pins[i] = random.nextBoolean();
+
+        }
 
     }
 }

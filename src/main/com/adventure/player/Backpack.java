@@ -6,6 +6,8 @@ import main.com.adventure.world.objects.Tangible;
  * Stores any Tangible item up to the MAX_CAPACITY.
  */
 public class Backpack {
+    //added the string
+    String backpack;
 
     private static final int MAX_CAPACITY = 5;
 
@@ -18,6 +20,12 @@ public class Backpack {
      */
     public boolean addItem(Tangible item) {
         //TODO Complete the function
+        for (int i= 0; i < MAX_CAPACITY; i++){
+            if(items[i]== null){
+                items[i] = item;
+                return true;
+            }
+        }
         return false;
     }
 
@@ -27,7 +35,13 @@ public class Backpack {
      * @return - the item if it exists. Otherwise, null.
      */
     public Tangible getItem(String name) {
-        //TODO Complete the function
+        Tangible item;
+        int i;
+        for (i = 0; i < items.length; i++){
+            if (items[i]!= null && items[i].getName().equals(name)){
+                return items[i] ;
+            }
+        }
         return null;
     }
 
@@ -37,7 +51,13 @@ public class Backpack {
      * @return - true if the item was removed. Otherwise, false.
      */
     public boolean removeItem(Tangible item) {
-        //TODO Complete the function
+        int i;
+        for (i = 0; i < items.length; i++){
+            if (items[i] == item) {
+                items [i]= null;
+                return true;
+            }
+        }
         return false;
     }
 
@@ -51,5 +71,14 @@ public class Backpack {
      */
     public void printItems() {
         //TODO Complete the function
+        System.out.println("Here are the items in your backpack:");
+        for (int i =0; i < MAX_CAPACITY; i++){
+            if (items[i] != null){
+                System.out.println(" - " + items[i].getName());
+                continue;
+            }
+
+        }
+
     }
 }

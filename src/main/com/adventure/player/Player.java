@@ -12,10 +12,11 @@ public class Player {
     private String name= "";
     public int level = 5;
     private int currentLocationIndex = AppSettings.getStartingLocation();
-    private Key key;
-    private Shovel shovel;
     private int power = 1;
     private int health = 10;
+    private Weapon weapon;
+    private Backpack backpack = new Backpack();
+    //check line above
 
 
 
@@ -100,8 +101,8 @@ public class Player {
      */
     public void setWeapon(Weapon item) {
         //TODO Complete this function in Sprint 3 Module 2
-
-
+        weapon = item;
+        power += item.getPower();
     }
 
     /**
@@ -112,8 +113,9 @@ public class Player {
      */
     public Tangible getItem(String itemName) {
         //TODO Complete this function in Sprint 3 Module 3
-        return null;
-    }
+            return backpack.getItem(itemName);
+        }
+
 
     /**
      * Sprint 3 Module 3
@@ -122,16 +124,16 @@ public class Player {
      * @return the removed item
      */
     public boolean removeItem(Tangible item) {
-        //TODO Complete this function in Sprint 3 Module 3
-        return false;
-    }
+            return (backpack.removeItem(item));
+        }
+
 
     /**
      * Sprint 3 Module 3
      * Prints the inventory.
      */
     public void printItems() {
-        //TODO Complete this function in Sprint 3 Module 3
+        backpack.printItems();
     }
 
     /**
@@ -140,23 +142,23 @@ public class Player {
      * @param item - item to add.
      */
     public void addItem(Tangible item) {
+        backpack.addItem(item);
         //TODO Complete this function
     }
 
     public void setKey(Key item) {
-        key = item;
+        backpack.addItem(item);
     }
-
     public Key getKey() {
-        return key;
+        return (Key) backpack.getItem("Key");
     }
 
     public void setShovel(Shovel item) {
-        shovel = item;
+        backpack.addItem(item);
     }
 
     public Shovel getShovel() {
-        return shovel;
+        return (Shovel) backpack.getItem("Shovel");
     }
 
     //////// DON'T CHANGE THE CODE BELOW. ///////////
