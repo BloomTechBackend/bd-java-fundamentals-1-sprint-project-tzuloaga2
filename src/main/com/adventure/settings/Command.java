@@ -1,6 +1,9 @@
 package main.com.adventure.settings;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class Command {
+
 
     public static final String TAKE = "take";
     public static final String MOVE = "move";
@@ -44,7 +47,11 @@ public class Command {
 
     public CommandVerb getVerb() {
         return verb;
+
+
     }
+
+
 
     public void setVerb(CommandVerb verb) {
         this.verb = verb;

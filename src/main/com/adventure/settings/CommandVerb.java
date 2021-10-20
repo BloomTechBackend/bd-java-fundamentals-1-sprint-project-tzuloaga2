@@ -1,5 +1,7 @@
 package main.com.adventure.settings;
 
+import org.mockito.internal.matchers.Null;
+
 import java.util.EmptyStackException;
 import java.util.Locale;
 
@@ -9,6 +11,7 @@ import java.util.Locale;
  */
 
 public enum CommandVerb {
+
     TAKE,
     MOVE,
     USE,
@@ -29,26 +32,32 @@ public enum CommandVerb {
      * @param verbString - the users input.
      * @return - the CommandVerb associated with the given input.
      */
-    public static CommandVerb getVerb(String verbString) {
+    public static CommandVerb getVerb(String verbString) throws EmptyCommandException, InvalidCommandException {
+        if (verbString == null) {
+            throw new EmptyCommandException();
+        }
         if (verbString.equals("move")) {
-            return MOVE;}
-        else if (verbString.equals("take")) {
-            return TAKE;}
-        else if (verbString.equals("use")) {
-            return USE;}
-        else if (verbString.equals("dig")) {
-            return DIG;}
-        else if (verbString.equals("examine")) {
-            return EXAMINE;}
-        else if (verbString.equals("look")) {
-            return LOOK;}
-        else if (verbString.equals("help")) {
-            return HELP;}
-        else if (verbString.equals("inventory")){
+            return MOVE;
+        } else if (verbString.equals("take")) {
+            return TAKE;
+        } else if (verbString.equals("use")) {
+            return USE;
+        } else if (verbString.equals("dig")) {
+            return DIG;
+        } else if (verbString.equals("examine")) {
+            return EXAMINE;
+        } else if (verbString.equals("look")) {
+            return LOOK;
+        } else if (verbString.equals("help")) {
+            return HELP;
+        } else if (verbString.equals("inventory")) {
             return INVENTORY;
-        }
-        else {
-            return INVALID;}
-        }
+        } else
+            throw new InvalidCommandException();
+    }
+
 
 }
+
+
+

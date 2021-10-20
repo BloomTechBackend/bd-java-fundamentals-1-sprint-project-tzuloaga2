@@ -1,7 +1,10 @@
 package main.com.adventure;
 
+import com.amazonaws.services.dynamodbv2.xspec.S;
 import main.com.adventure.settings.Command;
 import main.com.adventure.settings.CommandVerb;
+import main.com.adventure.settings.EmptyCommandException;
+import main.com.adventure.settings.InvalidCommandException;
 
 import java.util.Scanner;
 
@@ -32,7 +35,7 @@ public class GameInputProcessor {
      * @param input - the input from the user
      * @return - the Command object with the proper verb and blank object
      */
-    private Command buildSimpleCommand(String input) {
+    private Command buildSimpleCommand(String input) throws InvalidCommandException, EmptyCommandException {
         String[] separate = input.split(" ");
         CommandVerb sept = CommandVerb.getVerb(separate[0]);
         return new Command(sept, "");
@@ -45,7 +48,7 @@ public class GameInputProcessor {
      * @param input - the input from the user
      * @return - the Command object with the proper verb and object
      */
-    private Command buildCommandWithObject(String input) {
+    private Command buildCommandWithObject(String input) throws EmptyCommandException, InvalidCommandException {
         String[] separate = input.split(" ");
         return new Command(CommandVerb.getVerb(separate[0]),separate[1] );
     }
@@ -59,10 +62,21 @@ public class GameInputProcessor {
      */
     public Command getNextCommand() {
         String input = prompt();
-        return processCommand(input);
+        try {
+            return processCommand(input);
+        }
+        catch (InvalidCommandException problem){
+            System.out.println("This is an invalid command....");
+        }
+        catch (EmptyCommandException problem){
+            System.out.println("This is empty...");
+        }
+        finally{
+            return null;
+        }
     }
 
-    private Command processCommand(String input) {
+    private Command processCommand(String input) throws EmptyCommandException, InvalidCommandException{
         if (input.contains(Command.MOVE) ||
                 input.contains(Command.USE) ||
                 input.contains(Command.TAKE) ||
