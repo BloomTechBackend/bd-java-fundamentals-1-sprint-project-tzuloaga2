@@ -71,9 +71,9 @@ public class GameInputProcessor {
         catch (EmptyCommandException problem){
             System.out.println("This is empty...");
         }
-        finally{
+
             return null;
-        }
+        
     }
 
     private Command processCommand(String input) throws EmptyCommandException, InvalidCommandException{

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.adventure.sprint3.S3M3Test" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-10-20T17:33:57" hostname="68.0.16.172.net-uno.net" time="1.198">
+  <properties/>
+  <testcase name="testOmniDoorKey()" classname="com.adventure.sprint3.S3M3Test" time="0.056"/>
+  <testcase name="testPrintItemsCommand()" classname="com.adventure.sprint3.S3M3Test" time="1.057"/>
+  <testcase name="testBackpackAddRemoveItem()" classname="com.adventure.sprint3.S3M3Test" time="0.013"/>
+  <testcase name="testBackpackLimit()" classname="com.adventure.sprint3.S3M3Test" time="0.028"/>
+  <testcase name="testBackpackViaPlayer()" classname="com.adventure.sprint3.S3M3Test" time="0.017"/>
+  <testcase name="testPrintBackpack()" classname="com.adventure.sprint3.S3M3Test" time="0.002"/>
+  <testcase name="testOmniDoorRandomGeneration()" classname="com.adventure.sprint3.S3M3Test" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

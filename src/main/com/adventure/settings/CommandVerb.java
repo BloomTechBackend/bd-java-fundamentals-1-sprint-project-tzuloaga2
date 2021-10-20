@@ -36,10 +36,10 @@ public enum CommandVerb {
         if (verbString == null) {
             throw new EmptyCommandException();
         }
-        if (verbString.equals("move")) {
-            return MOVE;
-        } else if (verbString.equals("take")) {
+        if (verbString.equals("take")) {
             return TAKE;
+        } else if (verbString.equals("move")) {
+            return MOVE;
         } else if (verbString.equals("use")) {
             return USE;
         } else if (verbString.equals("dig")) {

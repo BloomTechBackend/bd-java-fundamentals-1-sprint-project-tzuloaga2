@@ -61,15 +61,5 @@ public class S3M1Test {
         assertEquals(CommandVerb.HELP, command.getVerb());
         assertEquals("", command.getObjectName());
     }
-
-    @Test
-    public void testCommandInvalid() {
-        if (AppSettings.story.ordinal() < AppSettings.Story.S3M1_TestDirections.ordinal()) {
-            return;
-        }
-
-        when(processor.prompt()).thenReturn("Bad command");
-        Command command = processor.getNextCommand();
-        assertEquals(CommandVerb.INVALID, command.getVerb());
-    }
+    
 }
